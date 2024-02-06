@@ -1,3 +1,8 @@
+// Problem statement
+// Given a binary number as an integer N, convert it into decimal and print.
+
+
+
 import java.util.Scanner;
 public class BinaryToDecimal {
     public static void main(String[] args) {
