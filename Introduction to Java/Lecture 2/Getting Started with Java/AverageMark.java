@@ -1,7 +1,5 @@
-
 import java.util.Scanner;
-
-public class AverageMarks {
+public class AverageMark {
 
 	public static void main(String[] args) {
 		  Scanner s = new Scanner(System.in);
