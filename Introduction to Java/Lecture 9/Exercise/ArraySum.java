@@ -32,11 +32,11 @@ Sample Input 2:
 Sample Output 2:
 15
 60
+
+--------------------------------------------------------------------------------------------------------------
 */
 public class ArraySum {
-    // Coding Ninjas Solution Class
     public static int sum(int[] arr) {
-        // Your code goes here
         int length = arr.length;
         int sum = 0;
         for (int i = 0; i < length; i++) {
@@ -45,9 +45,8 @@ public class ArraySum {
         return sum;
     }
 
-    //main code to check the program
     public static void main(String[] args) {
         int arr[] = {1, 2,3};
-        System.out.println(sum(arr)); //outputs 6 the solution code is ok
+        System.out.println(sum(arr)); 
     }
 }
