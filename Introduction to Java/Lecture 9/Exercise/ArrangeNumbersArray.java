@@ -77,11 +77,12 @@ public class ArrangeNumbersArray {
 
     }
 
-    public static void mai(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] arr = new int[n];
         arrange(arr, n);
         printArray(arr);
     }
+    
 }
