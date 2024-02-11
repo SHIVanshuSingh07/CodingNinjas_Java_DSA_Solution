@@ -83,6 +83,6 @@ public class ArrangeNumbersArray {
         int[] arr = new int[n];
         arrange(arr, n);
         printArray(arr);
+        sc.close();
     }
-    
 }
