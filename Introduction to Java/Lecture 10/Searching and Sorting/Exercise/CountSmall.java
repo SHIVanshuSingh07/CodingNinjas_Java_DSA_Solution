@@ -127,56 +127,60 @@ Sample Output 2 :
 ------------------------------------------------------------------------------------------------------------------
  */
 
-import java.util.Arrays;
-import java.util.Scanner;
-
-public class CountSmall {
-    public static int[] countS(int n, int m, int[] a, int[] b) {
-        int[] result = new int[n];
-        Arrays.sort(b);
-
-        int i = 0;
-        while (i < n) {
-            int index = Arrays.binarySearch(b, a[i]);
-            if (index >= 0) {
-                while (index > 0 && b[index - 1] == a[i]) {
-                    index--;
-                }
-                result[i] = index;
-            } else {
-                index = -(index + 1);
-                result[i] = index;
-            }
-            i++;
-        }
-
-        return result;
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int t = scanner.nextInt();
-
-        while (t-- > 0) {
-            int n = scanner.nextInt();
-            int[] a = new int[n];
-            for (int i = 0; i < n; i++) {
-                a[i] = scanner.nextInt();
-            }
-
-            int m = scanner.nextInt();
-            int[] b = new int[m];
-            for (int i = 0; i < m; i++) {
-                b[i] = scanner.nextInt();
-            }
-
-            int[] result = countS(n, m, a, b);
-            for (int i = 0; i < result.length; i++) {
-                System.out.print(result[i] + " ");
-            }
-            System.out.println();
-        }
-
-        scanner.close();
-    }
-}
+ import java.util.Arrays;
+ import java.util.Scanner;
+ 
+ public class CountSmall {
+     public static int[] countS(int n, int m, int[] a, int[] b) {
+         int[] result = new int[n];
+         Arrays.sort(b);
+ 
+         int maxB = b[m - 1];
+ 
+         for (int i = 0; i < n; i++) {
+             if (a[i] <= maxB) {
+                 int index = Arrays.binarySearch(b, a[i]);
+                 if (index >=0) {
+                     while (index > 0 && b[index - 1] == a[i]) {
+                         index--;
+                     }
+                     result[i] = index+1;
+                 } else {
+                     index = -(index + 1);
+                     result[i] = index;
+                 }
+             } else {
+                 result[i] = m;
+             }
+         }
+ 
+         return result;
+     }
+ 
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         int t = scanner.nextInt();
+ 
+         while (t-- > 0) {
+             int n = scanner.nextInt();
+             int[] a = new int[n];
+             for (int i = 0; i < n; i++) {
+                 a[i] = scanner.nextInt();
+             }
+ 
+             int m = scanner.nextInt();
+             int[] b = new int[m];
+             for (int i = 0; i < m; i++) {
+                 b[i] = scanner.nextInt();
+             }
+ 
+             int[] result = countS(n, m, a, b);
+             for (int i = 0; i < result.length; i++) {
+                 System.out.print(result[i] );
+             }
+             System.out.println();
+         }
+ 
+         scanner.close();
+     }
+ }
