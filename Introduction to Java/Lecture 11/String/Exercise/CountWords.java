@@ -50,6 +50,7 @@ public class CountWords {
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
 		System.out.println(countWords(str));
+        sc.close();
 	}
 
 }
