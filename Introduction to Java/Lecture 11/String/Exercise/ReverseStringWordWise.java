@@ -26,35 +26,22 @@ code your indent Always
 */
 
 
-
-
 public class ReverseStringWordWise {
     //coding ninjas solution code
-    public static String reverseWordWise(String str) {
-		// Write your code here
-        if(str.length()==0){
-            return "";
-        }
-        int n= str.length();
-        int currentWordStart;
-        int currentWordEnd=n;
-        String reversedString = "";
-        int i;
-        for(i=n-1;i>=0;i--){
-            if(str.charAt(i)==' '){
-              currentWordStart=i+1;
-              reversedString += str.substring(currentWordStart, currentWordEnd)+ " ";
-              currentWordEnd = i;
+        public static String reverseWordWise(String input) {
+            String[] words = input.split("\\s+"); 
+            StringBuilder reversed = new StringBuilder();
+            for (int i = words.length - 1; i >= 0; i--) {
+                reversed.append(words[i]); 
+                if (i != 0) {
+                    reversed.append(" "); 
+                }
             }
+            return reversed.toString();
         }
-        currentWordStart=i+1;
-        reversedString += str.substring(currentWordStart, currentWordEnd);
-        return reversedString;
-	}
-
-    public static void main(String[] args) {
-       String str = "Welcome to";
-       String result = reverseWordWise(str);
-       System.out.println(result); 
-    }    
-}
+    
+        public static void main(String[] args) {
+            String str = "Welcome to Coding Ninjas";
+            System.out.println(reverseWordWise(str));
+        }
+    }
