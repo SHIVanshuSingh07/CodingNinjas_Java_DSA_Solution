@@ -32,43 +32,21 @@ false
 --------------------------------------------------------------------------------------------------------
 */
 public class StringPalindrome {
-    //coding ninjas Solution
+
     public static boolean isPalindrome(String str) {
-		//Your code goes here
-        boolean isPalindrome = true;
+        //Your code goes here
         int start = 0;
         int end = str.length() - 1;
-        while(start < end){
-            if(str.charAt(start)!=str.charAt(end)){
-                isPalindrome = false;
+        boolean isTrue = true; 
+        while (start < end) { 
+            if (str.charAt(start) != str.charAt(end)) {
+                isTrue = false;
                 break; 
-            }else{
-                start++; 
-                end--;   
             }
+            start++;
+            end--;
         }
-        return isPalindrome; 
-	}
-
-    public static boolean isPalindrome1(String str) {
-		
-        boolean isPalindrome = false;
-        String reversedString = "";
-        for(int i=0;i<str.length();i++){
-            reversedString = str.charAt(i) + reversedString;
-        }
-        if(reversedString.equals(str)){
-            isPalindrome = true;
-        }
-        return isPalindrome;
-	}
-    //driver code to check Solution
-    public static void main(String[] args) {
-      String str = "abba";
-      String str1 = "abcd";
-      System.out.println(isPalindrome(str));  
-      System.out.println(isPalindrome(str1)); 
-      System.out.println(isPalindrome1(str));
-      System.out.println(isPalindrome1(str1));
+        return isTrue;
     }
 }
+
