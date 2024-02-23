@@ -35,32 +35,32 @@ abc
 cbd
 Sample Output 2:
 false
+
+
+
+
+--------------------------------------------------------------------------------------------------------
 */
-package Assignments;
+
+
+
 public class CheckPermutation {
-    //coding ninjas solution
     public static boolean isPermutation(String str1, String str2) {
-		//Your code goes here
         if(str1.length() != str2.length()){
             return false;
         }
-        //creates a new integer frequency array
         int frequency[] = new int[256];
-        //initialize every elements of frequency array to zero
         for(int i=0;i<256;i++){
             frequency[i] = 0;
         }
-        //Go through first str1
         for(int i=0;i<str1.length();i++){
             char ch = str1.charAt(i);
             frequency[ch]++;
         }
-        //Go through second str2
         for(int i=0;i<str2.length();i++){
             char ch = str2.charAt(i);
             frequency[ch]--;
         }
-        //go through frequency array 
         for(int i=0;i<256;i++){
             if(frequency[i] != 0){
                 return false;
@@ -68,7 +68,6 @@ public class CheckPermutation {
         }
         return true;
 	}
-    //main driver code to check the solution
     public static void main(String[] args) {
      String str1 = "abad";
      String str2 = "dcba";
