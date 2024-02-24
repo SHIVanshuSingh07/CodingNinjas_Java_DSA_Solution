@@ -60,5 +60,6 @@ public class reverseEachWords {
         Scanner s = new Scanner(System.in);
         String str = s.nextLine();
         System.out.println(reverseEachWord(str));
+        s.close();
     }
 }
