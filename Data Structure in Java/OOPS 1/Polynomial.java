@@ -33,6 +33,9 @@
 // Sample Output 2 :
 // P1 - P2 = 2x3 -3x4 4x6
 
+
+// ------------------------------------------------------------------------------------------------------
+
 // Solution :////////////
 
 /* Signature of four required functions is given in the code. You can create other functions as well if you need.
@@ -95,12 +98,6 @@
 public class Polynomial {
     int degCoeff[];
 
-	
-	/* This function sets coefficient for a particular degree value, if degree is not there in the polynomial
-	 *  then corresponding term(with specified degree and value is added int the polynomial. If the degree
-	 *  is already present in the polynomial then previous coefficient is replaced by
-	 *  new coefficient value passed as function argument
-	*/
     Polynomial(){
         degCoeff = new int[10];
     }
